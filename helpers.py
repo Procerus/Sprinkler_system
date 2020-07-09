@@ -39,7 +39,7 @@ def condition(number):
 
     # Contact API
     try:
-        response = requests.get(f"http://api.openweathermap.org/data/2.5/forecast?id=4893811&APPID=129b46a0dbce5e978181753d2c897175")
+        response = requests.get(f"Open Weather API5")
         response.raise_for_status()
     except requests.RequestException:
         return None
