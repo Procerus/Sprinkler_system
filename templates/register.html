@@ -1,0 +1,42 @@
+{% extends "generallayout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block main %}
+    <form action="/register" id = "register" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id = "username" name="username" placeholder="Choose Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Choose Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Enter Password Again" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <p>DO NOT USE ANY REAL PASSWORD, THE WEBSITE IS NOT SECURE</p>
+<script>
+    var check
+    $(document).ready(function(){
+        $('#register').submit(function(event){
+            event.preventDefault();
+
+            $.get('/check?username=' + $("#username").val(), function(condition) {
+                if(condition == false) {
+                    alert("name taken");
+                }
+                else {
+                    $('#register').unbind("submit");
+                    $('#register').submit();
+                }
+            });
+
+        });
+    });
+
+</script>
+{% endblock %}

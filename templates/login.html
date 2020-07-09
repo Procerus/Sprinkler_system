@@ -1,0 +1,22 @@
+{% extends "generallayout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+	<h>Due to how the website functions it is needed to create an account. Click on the top	
+	right of the screen to register. The only necessary information needed is username and
+	password to be given access to the site. When creating passwords remember this site is 
+	not completly secure, the passwords are hashed but that is stored in a SQLite database
+	that would be accessable, therefore only use passwords that are unique to other accounts.</h>
+{% endblock %}

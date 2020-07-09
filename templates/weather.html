@@ -1,0 +1,22 @@
+{% extends "weatherlayout.html" %}
+
+{% block title %}
+    Main Menu
+{% endblock %}
+
+{% block main %}
+    <h>Current weather: {{ weather }}</h>
+    <h>Current Temperature: {{ temp }}</h>
+	<div class="chart" id="bargraph">
+		<script>
+			var graphs = {{plot | safe}};
+			Plotly.plot('bargraph',graphs,{});
+		</script>
+	</div>	
+    <div>
+        <h>Total time used this month: {{ total }} minutes</h>
+    </div>
+    <div><h>Total Gal used this month: ~ {{ gal }} gal</h></div>
+	<div><h>Total Approximate cost this month: ~ ${{ cost }} </h></div>
+
+{% endblock %}
