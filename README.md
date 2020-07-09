@@ -9,4 +9,4 @@ The program also features Twilio text message system. The User can send a text m
 ## Plotly Graph
 The program also features a visable graph feature that shows the rain and sprinkler usage on a bar chart and water costs depending on the area.
 
-![Plot Graph](/graph.jpg)
+![Plot Graph](https://github.com/Procerus/Sprinkler_system/blob/master/graph.JPG)
